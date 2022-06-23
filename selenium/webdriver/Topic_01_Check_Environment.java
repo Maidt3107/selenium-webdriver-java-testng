@@ -15,7 +15,9 @@ public class Topic_01_Check_Environment {
 	String projectPath = System.getProperty("user.dir");
 	@BeforeClass
 	public void beforeClass() {
-		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
+	//	System.setProperty("webdriver.gecko.driver", "E:\\automation Testing\\02-Selenium webDriver\\BrowserDriver\\geckodriver.exe");)
+		System.setProperty("webdriver.gecko.driver", projectPath + "\\BrowserDriver\\\\geckodriver.exe");
+		
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
@@ -44,6 +46,7 @@ public class Topic_01_Check_Environment {
 
 	@AfterClass
 	public void afterClass() {
+		driver.quit();
 
 	}
 
